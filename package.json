@@ -2,21 +2,17 @@
   "name": "davopex",
   "version": "1.0.0",
   "description": "Davopex cybersecurity education website",
-  "main": "index.js",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
-    "build": "echo \"No build step required\""
+    "build": "echo 'Static site ready'"
   },
   "keywords": [
     "davopex",
     "cybersecurity",
-    "education",
-    "ethical hacking",
-    "davopex cybersecurity"
+    "ethical-hacking",
+    "cyber-awareness",
+    "tutorials"
   ],
   "author": "Davopex",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "license": "MIT"
 }
