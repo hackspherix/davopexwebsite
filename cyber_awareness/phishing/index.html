@@ -1,1 +1,301 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Phishing | Davopex</title>  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+   <meta property="og:title" content="Understanding Phishing | Davopex"/>
+  <meta property="og:description" content="This page provides simple, practical tips, resources, and best practices to help you understand, identify, and defend against common cyber threats like phishing, malware, and data breaches."/>
+  <meta property="og:image" content="https://davopex.vercel.app/images/davopex-1024x1024.png"/>
+  <meta property="og:image:secure_url" content="https://davopex.vercel.app/images/davopex-1024x1024.png"/>
+  <meta property="og:image:width" content="1024"/>
+  <meta property="og:image:height" content="1024"/>
+  <meta property="og:image:alt" content="davopex logo"/>
+  <meta property="og:image:type" content="image/png"/>
+
+  <meta property="og:url" content="https://davopex.vercel.app"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Davopex"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <meta name="description" content="Davopex is a cybersecurity and ethical hacking learning platform offering tutorials on phishing, malware, ransomware, cloud security, IoT security, and online privacy for beginners." />
+  <meta name="keywords" content="Davopex, cybersecurity, ethical hacking, cyber awareness, hacking tutorials"/>
+  <meta name="author" content="Davopex">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@davopexofficial">
+  <meta name="twitter:title" content="Davopex | Cybersecurity & Ethical Hacking">
+  <meta name="twitter:description" content="Davopex through practical tips, trusted resources, and real-world best practices, you’ll learn how to recognize and prevent common cyber threats such as phishing attacks, malicious software, and data leaks.">
+  <meta name="twitter:image" content="https://davopex.vercel.app/images/phishing-800x418.png">
+  
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Davopex",
+  "url": "https://davopex.vercel.app",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://davopex.vercel.app/images/davopex-300x300.png"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "AFIL PM",
+  "jobTitle": "Founder & CEO",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Davopex",
+    "url": "https://davopex.vercel.app"
+    }
+    }
+  </script>
+  <link rel="canonical" href="https://davopex.vercel.app"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://davopex.vercel.app/images/davopex-180x180.png"/> 
+  <link rel="icon" type="image/png" sizes="32x32" href="https://davopex.vercel.app/images/davopex-32x32.png"/>
+  <link rel="icon" href="https://davopex.vercel.app/images/davopex-144x144.png" sizes="144x144"/>
+  <link rel="icon" href="https://davopex.vercel.app/images/davopex-96x96.png" sizes="96x96"/>
+  <link rel="icon" href="https://davopex.vercel.app/images/davopex-48x48.png" sizes="48x48"/>
+  <link rel="shortcut icon" href="https://davopex.vercel.app/images/davopex-16x16.png" type="image/x-icon"/>
+  <link rel="manifest" href="https://davopex.vercel.app/site.webmanifest"/>
+  <style>
+    :root { 
+        --primary-blue: #0066ff; 
+        --accent-glow: rgba(51, 0, 255, 0.3);
+        --bg-dark: #0a0a0c;
+        --card-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    body { 
+        margin: 0; 
+        font-family: 'Inter', 'Segoe UI', sans-serif; 
+        background: var(--bg-dark); 
+        color: #fff; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Ambient Background Glow */
+    body::before {
+        content: "";
+        position: fixed;
+        top: -10%;
+        right: -10%;
+        width: 400px;
+        height: 400px;
+        background: var(--primary-blue);
+        filter: blur(150px);
+        opacity: 0.15;
+        z-index: -1;
+    }
+    
+    * {
+        -webkit-tap-highlight-color: transparent;
+        outline-style: none;
+    }
+    
+    * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Back Button - Sleek Glass style */
+    .back-home { 
+        position: fixed; 
+        top: 25px; 
+        left: 25px;
+        font-size: 0.9rem;
+        color: #fff; 
+        text-decoration: none; 
+        background: rgba(255, 255, 255, 0.08); 
+        padding: 10px 20px; 
+        border-radius: 15px; 
+        backdrop-filter: blur(10px); 
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease; 
+        font-weight: 500;
+        z-index: 1000;
+    }
+    .back-home:hover { 
+        background: var(--primary-blue); 
+        border: 1px solid rgba(255, 255, 255, 255);
+        transform: translateX(-5px);
+    }
+
+    /* Video Player Container */
+    .video-wrapper { 
+        width: 95%; 
+        max-width: 1100px; 
+        margin-top: 100px; 
+        aspect-ratio: 16 / 9; 
+        border-radius: 20px;
+        overflow: hidden;
+        background: #000;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    video { width: 100%; height: 100%; display: block; object-fit: cover; 
+        object-position: center;}
+
+    /* Content Layout */
+    .info-section { 
+        width: 95%; 
+        max-width: 1100px; 
+        padding: 40px 0; 
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+    }
+
+    .main-info h1 { 
+        font-size: 2.5rem; 
+        margin: 0 0 15px 0; 
+        background: linear-gradient(to right, #fff, #999);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .meta { 
+        display: flex; 
+        gap: 25px; 
+        margin-bottom: 25px; 
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+    .meta span i { color: var(--primary-blue); margin-right: 8px; }
+
+    .description { 
+        font-size: 1.1rem; 
+        line-height: 1.8; 
+        color: #ccc; 
+        margin-bottom: 30px;
+    }
+
+    /* Side Features */
+    .features-card {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        height: fit-content;
+    }
+    .features-card h3 { margin-top: 0; color: var(--primary-blue); font-size: 1.2rem; }
+    .features-list { list-style: none; padding: 0; margin: 0; }
+    .features-list li { 
+        padding: 10px 0; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .features-list li:last-child { border: none; }
+    .features-list li i { color: #00ff88; font-size: 0.8rem; }
+
+    /* Share Button */
+    .action-row { display: flex; gap: 15px; }
+    .btn-share { 
+        background: var(--primary-blue); 
+        border: none; 
+        color: white; 
+        padding: 14px 28px; 
+        border-radius: 12px; 
+        font-weight: 600;
+        cursor: pointer; 
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-share:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
+
+    @media (max-width: 850px) {
+        .info-section { grid-template-columns: 1fr; }
+        .main-info h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-home" onclick="goBack()"><i class="fas fa-arrow-left"></i>Back</button>
+  
+  <div class="video-wrapper">
+    <video controls preload="auto" poster="https://davopex.vercel.app/images/phishing-thumbnail.png">
+      <source src="https://davopex.vercel.app/videos/phishing.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <main class="info-section">
+    <div class="main-info">
+        <h1>Understanding Phishing Attacks</h1>
+        <div class="meta">
+            <span><i class="fa-solid fa-calendar-day"></i> 2025 Edition</span>
+            <span><i class="fa-solid fa-clock"></i> 7 Minutes</span>
+            <span><i class="fa-solid fa-signal"></i> Beginner</span>
+        </div>
+        
+        <p class="description">
+            Phishing remains the #1 entry point for cyberattacks globally. In this expert walkthrough, 
+            we dissect real-world examples of social engineering, teach you how to analyze suspicious 
+            headers, and reveal the psychological triggers hackers use to trick even the most 
+            tech-savvy users.
+        </p>
+
+        <div class="action-row">
+            <button onclick="share()" class="btn-share">
+                <i class="fa-solid fa-share-nodes"></i> Share Tutorial
+            </button>
+        </div>
+    </div>
+
+    <aside class="features-card">
+        <h3>Key Learning Points</h3>
+        <ul class="features-list">
+            <li><i class="fa-solid fa-check"></i> Identifying Spoofed Domains</li>
+            <li><i class="fa-solid fa-check"></i> URL Inspection Techniques</li>
+            <li><i class="fa-solid fa-check"></i> Common Urgent Subject Lines</li>
+            <li><i class="fa-solid fa-check"></i> Email Header Analysis</li>
+            <li><i class="fa-solid fa-check"></i> Multi-Factor Authentication</li>
+        </ul>
+    </aside>
+  </main>
+
+  <script>
+    async function share() {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Phishing Tutorial | Davopex',
+                    text: 'I found this cybersecurity guide helpful!',
+                    url: window.location.href,
+                });
+            } catch (err) { console.log("Share failed", err); }
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied to clipboard!");
+        }
+    }
+    function goBack() {
+  if (document.referrer && document.referrer.startsWith(window.location.origin)) {
+    history.back();
+  } else {
+    window.location.replace("https://davopex.vercel.app/cyber_awareness/");
+  }
+    }
+  </script>
+</body>
+  </html>
 
