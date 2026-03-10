@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /_next/static/
+
+User-agent: Googlebot
+Allow: /assets/images/
+Allow: /assets/videos/
+Allow: /assets/fonts/
+
+https://zavopex.vercel.app/sitemap.xml
