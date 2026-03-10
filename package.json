@@ -1,0 +1,22 @@
+{
+  "name": "davopex",
+  "version": "1.0.0",
+  "description": "Davopex cybersecurity education website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo \"No build step required\""
+  },
+  "keywords": [
+    "davopex",
+    "cybersecurity",
+    "education",
+    "ethical hacking",
+    "davopex cybersecurity"
+  ],
+  "author": "Davopex",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
