@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
 
   <meta property="og:title" content="Cybersecurity Video Tutorials | Ethical Hacking Guide - Davopex"/>
-  <meta property="og:image" content="https://davopex.vercel.app/images/davopex-1024x1024.png"/>
-  <meta property="og:image:secure_url" content="https://davopex.vercel.app/images/davopex-1024x1024.png"/>
+  <meta property="og:image" content="https://davopex.vercel.app/images/light-font-1024x1024.png"/>
+  <meta property="og:image:secure_url" content="https://davopex.vercel.app/images/light-font-1024x1024.png"/>
   <meta property="og:image:width" content="1024"/>
   <meta property="og:image:height" content="1024"/>
   <meta property="og:image:alt" content="davopex logo"/>
@@ -54,15 +54,26 @@
     }
     }
   </script>
-  <link rel="canonical" href="https://davopex.vercel.app"/>
-  <link rel="apple-touch-icon" sizes="180x180" href="https://davopex.vercel.app/images/davopex-180x180.png"/> 
-  <link rel="icon" type="image/png" sizes="32x32" href="https://davopex.vercel.app/images/davopex-32x32.png"/>
-  <link rel="icon" href="https://davopex.vercel.app/images/davopex-144x144.png" sizes="144x144"/>
-  <link rel="icon" href="https://davopex.vercel.app/images/davopex-96x96.png" sizes="96x96"/>
-  <link rel="icon" href="https://davopex.vercel.app/images/davopex-48x48.png" sizes="48x48"/>
-  <link rel="shortcut icon" href="https://davopex.vercel.app/images/davopex-16x16.png" type="image/x-icon"/>
-  <link rel="manifest" href="https://davopex.vercel.app/site.webmanifest"/>
+   <link rel="canonical" href="https://davopex.vercel.app"/>
+   <!-- Light mode favicon -->
+   <link rel="shortcut icon" type="image/png" href="https://devopex.vercel.app/images/light-16x16.png" media="(prefers-color-scheme: light)" sizes="16x16"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/light-32x32.png" media="(prefers-color-scheme: light)" sizes="32x32"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/light-48x48.png" media="(prefers-color-scheme: light)"sizes="48x48"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/light-96x96.png" media="(prefers-color-scheme: light)" sizes="96x96"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/light-144x144.png" media="(prefers-color-scheme: light)" sizes="144x144"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/light-192x192.png" media="(prefers-color-scheme: light)" sizes="192x192"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/light-512x512.png" media="(prefers-color-scheme: light)" sizes="512x512"/>
+   <link rel="apple-touch-icon" sizez="180x180" href="https://devopex.vercel.app/images/light-180x180.png"/>
 
+   <!-- Dark mode favicons -->
+   <link rel="shortcut icon" type="image/png" href="https://devopex.vercel.app/images/dark-16x16.png" media="(prefers-color-scheme: dark)" sizes="16x16"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/dark-32x32.png" media="(prefers-color-scheme: dark)" sizes="32x32"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/dark-48x48.png" media="(prefers-color-scheme: dark)"sizes="48x48"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/dark-96x96.png" media="(prefers-color-scheme: dark)" sizes="96x96"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/dark-144x144.png" media="(prefers-color-scheme: dark)" sizes="144x144"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/dark-192x192.png" media="(prefers-color-scheme: dark)" sizes="192x192"/>
+   <link rel="icon" type="image/png" href="https://devopex.vercel.app/images/dark-512x512.png" media="(prefers-color-scheme: dark)" sizes="512x512"/>
+   <link rel="manifest" href="https://davopex.vercel.app/site.webmanifest"/>
   <style>  
     :root { 
         --primary-blue: #0066ff; 
@@ -110,7 +121,8 @@
         justify-content: space-between; 
         align-items: center; 
         backdrop-filter: blur(5px); 
-        background: rgba(255, 255, 255, 0.08); 
+        -webkit-backdrop-filter: blur(5px);
+        background: rgba(10, 10, 12, 0.08); 
         padding: 0 20px; 
         position: fixed; 
         width: 100%; 
@@ -140,6 +152,7 @@
         background: rgba(255, 255, 255, 0.05);
         color: #fff;
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         font-size: 1rem;
         transition: 0.3s;
     }
@@ -256,6 +269,7 @@
         gap: 10px;
         z-index: 1000;
         backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
     }
@@ -375,4 +389,3 @@ function goBack() {
   </script>  
 </body>  
 </html>
-
