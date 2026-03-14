@@ -1,1 +1,385 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davopex | Ethical Hacking Learning</title>
+
+    <meta name="title" content="Davopex - Ethical Hacking Tutorials & Coding Guides">
+    <meta name="description" content="Learn ethical hacking, coding tutorials, and cybersecurity basics with Davopex. Step-by-step guides for beginners and developers.">
+    <meta name="keywords" content="ethical hacking, cybersecurity, coding tutorials, hacking course, html css javascript tutorial, Davopex">
+    <meta name="author" content="Davopex">
+    <meta name="robots" content="index, follow">
+
+    <meta name="theme-color" content="#0f172a">
+
+    <meta property="og:title" content="Davopex - Ethical Hacking Tutorials">
+    <meta property="og:description" content="Learn ethical hacking and coding with step-by-step tutorials.">
+    <meta property="og:url" content="https://davopex.vercel.app">
+    <meta property="og:image" content="https://davopex.vercel.app/images/light-font-1024x1024.png">
+    <meta property="og:type" content="website"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-glow: rgba(0, 102, 255, 0.4);
+            --secondary: #00ff90;
+            --bg-dark: #05070a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle at 50% 50%, var(--primary-glow) 0%, transparent 50%);
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 0;
+            background: linear-gradient(90deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+        }
+
+        #commandSearch {
+            width: 100%;
+            padding: 15px 25px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        #commandSearch:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px 100px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        /* Responsive Grid for larger screens */
+        @media (min-width: 768px) {
+            .container { grid-template-columns: repeat(2, 1fr); }
+            .card-full { grid-column: span 2; }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 102, 255, 0.4);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .command-box {
+            background: #000;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .command-box code {
+            font-family: 'Fira Code', monospace;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: var(--primary);
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+
+        .copy-btn:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: rgba(0, 102, 255, 0.2);
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: bold;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            color: var(--text-dim);
+        }
+
+        .nano-hints {
+            display: flex;
+            gap: 15px;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        kbd {
+            background: #334155;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>DAVOPEX</h1>
+    <p><i class="fas fa-shield-halved"></i> Ethical Hacking Roadmap 2026</p>
+</header>
+
+<div class="search-container">
+    <input type="text" id="commandSearch" placeholder="Search for a tool or command..." onkeyup="filterCards()">
+</div>
+
+<div class="container" id="cardGrid">
+    
+    <div class="card">
+        <div class="status-badge">Phase 01</div>
+        <h2><i class="fas fa-download"></i> Install Termux</h2>
+        <p>Start your journey by installing the terminal emulator from F-Droid.</p>
+        <div class="command-box">
+            <code>https://f-droid.org/en/packages/com.termux/</code>
+            <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="status-badge">Phase 01</div>
+        <h2><i class="fas fa-sync"></i> Update & Upgrade</h2>
+        <p>Keep your environment secure and up to date.</p>
+        <div class="command-box">
+            <code>pkg update && pkg upgrade</code>
+            <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="status-badge">Setup</div>
+        <h2><i class="fas fa-hdd"></i> Storage Access</h2>
+        <p>Grant Termux permission to access your device storage.</p>
+        <div class="command-box">
+            <code>termux-setup-storage</code>
+            <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="status-badge">Essentials</div>
+        <h2><i class="fas fa-box-open"></i> Package Manager</h2>
+        <p>Install the core languages and tools.</p>
+        <div class="command-box"><code>pkg install git</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+        <div class="command-box"><code>pkg install python</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+        <div class="command-box"><code>pkg install nano</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+    </div>
+
+    <div class="card card-full">
+        <div class="status-badge">Core Skills</div>
+        <h2><i class="fas fa-folder-tree"></i> File Management</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+            <div class="command-box"><code>ls</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>cd foldername</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>mkdir newfolder</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>touch file.txt</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>rm file.txt</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>rm -rf foldername</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="status-badge">Analysis</div>
+        <h2><i class="fas fa-file-lines"></i> Read Files</h2>
+        <div class="command-box"><code>cat file.txt</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+        <div class="command-box"><code>less file.txt</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+    </div>
+
+    <div class="card">
+        <div class="status-badge">Editor</div>
+        <h2><i class="fas fa-pen-to-square"></i> Nano Editor</h2>
+        <div class="command-box"><code>nano file.txt</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+        <div class="nano-hints">
+            <span><kbd>CTRL</kbd> + <kbd>O</kbd> Save</span>
+            <span><kbd>CTRL</kbd> + <kbd>X</kbd> Exit</span>
+        </div>
+    </div>
+
+    <div class="card card-full">
+        <div class="status-badge">Advanced</div>
+        <h2><i class="fab fa-linux"></i> Kali NetHunter Installation</h2>
+        <p>Transform Termux into a full-scale penetration testing platform.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px;">
+            <div class="command-box"><code>pkg install wget</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>wget -O install-nethunter-termux https://offs.ec/2MceZWr</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>chmod +x install-nethunter-termux</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+            <div class="command-box"><code>./install-nethunter-termux</code><button class="copy-btn" onclick="copyCmd(this)">Copy</button></div>
+        </div>
+    </div>
+
+    <div class="card card-full">
+        <div class="status-badge">Curriculum</div>
+        <h2><i class="fas fa-graduation-cap"></i> Next Learning Path</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+            <ul><li><i class="fas fa-terminal"></i> Linux Commands</li><li><i class="fas fa-network-wired"></i> Networking</li></ul>
+            <ul><li><i class="fas fa-search"></i> Reconnaissance</li><li><i class="fas fa-globe"></i> Web Pen-testing</li></ul>
+            <ul><li><i class="fas fa-wifi"></i> Wireless Attacks</li><li><i class="fas fa-bug"></i> Malware Analysis</li></ul>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Davopex | Educational Purposes Only</p>
+</footer>
+
+<script>
+    // Copy Command Function
+    function copyCmd(btn){
+        const command = btn.parentElement.querySelector("code").innerText;
+        navigator.clipboard.writeText(command).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = "Copied!";
+            btn.style.background = "#00ff90";
+            btn.style.color = "#000";
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "";
+                btn.style.color = "";
+            }, 1500);
+        });
+    }
+
+    // Filter Function
+    function filterCards() {
+        const input = document.getElementById('commandSearch').value.toLowerCase();
+        const cards = document.getElementsByClassName('card');
+        
+        for (let i = 0; i < cards.length; i++) {
+            const text = cards[i].innerText.toLowerCase();
+            cards[i].style.display = text.includes(input) ? "flex" : "none";
+        }
+    }
+</script>
+
+</body>
+</html>
