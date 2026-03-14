@@ -273,6 +273,32 @@
             font-family: sans-serif;
         }
 
+        .back-home {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: rgba(255, 255, 255, 0.08); 
+        color: #fff;
+        padding: 9px 18px;
+        border-radius: 30px;  
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+        background: rgba(10, 10, 12, 0.08);
+        transform: translateY(-3px);
+    }
+
         footer {
             text-align: center;
             padding: 40px;
@@ -387,6 +413,7 @@
     </div>
 
 </div>
+    <button class="back-home" onclick="goBack()""><i class="fa-solid fa-house"></i>Back to home</button>
 
 <footer>
     <p>&copy; 2026 Davopex | Educational Purposes Only</p>
@@ -419,6 +446,14 @@
             const text = cards[i].innerText.toLowerCase();
             cards[i].style.display = text.includes(input) ? "flex" : "none";
         }
+    }
+
+    function goBack() {
+  if (document.referrer && document.referrer.startsWith(window.location.origin)) {
+    history.back();
+  } else {
+    window.location.replace("https://davopex.vercel.app/");
+  }
     }
 </script>
 
